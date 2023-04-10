@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="852.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.maze.MainLayoutController">
+    <right>
+        <Pane maxWidth="200.0" minHeight="200.0" minWidth="200.0" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <ChoiceBox fx:id="choicebox" layoutX="21.0" layoutY="24.0" prefWidth="150.0" />
+                <Button layoutX="66.0" layoutY="58.0" mnemonicParsing="false" onAction="#solveMaze" prefHeight="25.0" prefWidth="69.0" text="Solve" />
+                <CheckBox fx:id="showSolution" layoutX="51.0" layoutY="90.0" mnemonicParsing="false" onAction="#toggleSolution" selected="true" text="Show Solution" />
+                <Button layoutX="62.0" layoutY="226.0" mnemonicParsing="false" onAction="#saveAsFile" text="Save as File" />
+                <Label layoutX="-6.0" layoutY="379.0" text="Generating Delay" />
+                <Spinner fx:id="generatingDelayInput" editable="true" layoutX="96.0" layoutY="375.0" prefHeight="25.0" prefWidth="85.0">
+                    <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="0" max="500" min="0" />
+                    </valueFactory>
+                </Spinner>
+                <Label layoutX="15.0" layoutY="412.0" text="Solving Delay" />
+                <Spinner fx:id="solvingDelayInput" editable="true" layoutX="96.0" layoutY="408.0" prefHeight="25.0" prefWidth="85.0">
+                    <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="5" max="500" min="0" />
+                    </valueFactory>
+                </Spinner>
+                <Label layoutX="22.0" layoutY="447.0" text="Maze Width" />
+                <Spinner fx:id="mazeWidthInput" editable="true" layoutX="96.0" layoutY="443.0" prefHeight="25.0" prefWidth="85.0">
+                    <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="125" max="500" min="5" />
+                    </valueFactory>
+                </Spinner>
+                <Label layoutX="20.0" layoutY="481.0" text="Maze Height" />
+                <Spinner fx:id="mazeHeightInput" editable="true" layoutX="96.0" layoutY="478.0" prefHeight="25.0" prefWidth="85.0">
+                    <valueFactory>
+                        <SpinnerValueFactory.IntegerSpinnerValueFactory initialValue="125" max="500" min="5" />
+                    </valueFactory>
+                </Spinner>
+                <Button layoutX="39.0" layoutY="516.0" mnemonicParsing="false" onAction="#generateNewMaze" text="Generate New Maze" />
+            </children>
+        </Pane>
+    </right>
+   <center>
+      <AnchorPane fx:id="leftPane" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+                <Canvas fx:id="mainCanvas" height="400.0" width="401.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
